@@ -60,9 +60,9 @@ def main():
     msg = int(input('Enter msg (numerical):'))
     public_key, private_key = generate_key_pair(p, q)
     cipher = encrypt(msg, public_key)
-    print(f'Encrypted msg: {cipher}')
+    print('Encrypted msg: ', cipher)
     plaintext = decrypt(cipher, private_key)
-    print(f'Decrypted msg: {plaintext}')
+    print('Decrypted msg: ', plaintext)
 
 
 if __name__ == '__main__':
