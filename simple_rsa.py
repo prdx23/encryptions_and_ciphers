@@ -34,7 +34,7 @@ def encrypt(msg, public_key):
     #  note: msg has to be numerical, or string converted to numerical
     #  cipher = (msg ^ e) mod n
     n, e = public_key
-    cipher = (msg ** e) % n
+    cipher = pow(msg, e, n)
     return cipher
 
 
@@ -46,16 +46,16 @@ def decrypt(cipher, private_key):
         print('Choose larger prime numbers p and q')
         return 0
 
-    plaintext = (cipher ** d) % n
+    plaintext = pow(cipher, d, n)
     return plaintext
 
 
 def main():
     #  first prime number (p)
-    p = 521
+    p = 20988936657440586486151264256610222593863921
 
     #  second prime number (q)
-    q = 523
+    q = 67280421310721
 
     msg = int(input('Enter msg (numerical):'))
     public_key, private_key = generate_key_pair(p, q)

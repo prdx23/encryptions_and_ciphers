@@ -7,7 +7,9 @@ def ceaser(text, key):
             continue
         new_char = ord(char) + key
         if new_char > ord('z'):
-            new_char = ord(char) - ord('z') + ord('a') - 1
+            new_char = new_char - ord('z') + ord('a') - 1
+        if new_char < ord('a'):
+            new_char = new_char + ord('z') - ord('a') + 1
         new_text += chr(new_char)
     return new_text
 
